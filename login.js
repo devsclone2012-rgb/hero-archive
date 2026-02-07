@@ -4,18 +4,16 @@ const error = document.getElementById("error");
 form.addEventListener("submit", function(e) {
   e.preventDefault();
 
-  const id = document.getElementById("username").value.trim().toUpperCase();
+  const id = document.getElementById("username").value.trim();
   const key = document.getElementById("password").value.trim();
 
   // SINGLE EMPLOYEE IDENTIFICATION
   const EMPLOYEE_ID = "VantageEmployee";
 
-  // H.E.R.O ACCESS KEYS (FORMAT-BASED)
-  const HERO_KEYS = [
-    "Ydqwdjhkhursurmhfw"
-  ];
+  // ACCESS KEY
+  const ACCESS_KEY = "Ydqwdjhkhursurmhfw";
 
-  if (id === EMPLOYEE_ID && HERO_KEYS.includes(key)) {
+  if (id === EMPLOYEE_ID && key === ACCESS_KEY) {
     error.style.display = "block";
     error.innerText = "ACCESS ACKNOWLEDGED";
 
