@@ -1,60 +1,160 @@
+/* ===== BASE ===== */
 body {
-    background: black;
-    color: white;
-    font-family: monospace;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     margin: 0;
-}
-
-.login-container {
-    border: 1px solid #444;
     padding: 30px;
-    width: 340px;
-    text-align: center;
+    background: #0a0a0a;
+    color: #e5e5e5;
+    font-family: Consolas, monospace;
 }
 
 h1 {
-    font-size: 18px;
-    margin-bottom: 10px;
+    font-size: 16px;
+    letter-spacing: 3px;
+    margin: 0;
+}
+
+p {
+    font-size: 12px;
+    line-height: 1.6;
+    margin: 6px 0;
+}
+
+/* ===== ARCHIVE / DATABASE HUB ===== */
+.archive {
+    border: 1px solid #1f1f1f;
+    padding: 25px;
+    background: linear-gradient(#0c0c0c, #090909);
 }
 
 .description {
     font-size: 11px;
-    color: #8a8a8a;
-    letter-spacing: 1px;
-    margin-bottom: 20px;
-    line-height: 1.6;
+    opacity: 0.7;
+    margin-top: 8px;
 }
 
-input {
-    width: 100%;
-    margin: 8px 0;
-    padding: 8px;
-    background: black;
-    border: 1px solid #555;
-    color: white;
-    font-family: monospace;
+.status {
+    font-size: 11px;
+    opacity: 0.6;
+    margin-top: 4px;
 }
 
-button {
-    width: 100%;
-    padding: 8px;
-    margin-top: 10px;
-    background: #111;
-    border: 1px solid #777;
-    color: white;
+/* ===== FOLDER ROW ===== */
+.folder-row {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.folder {
+    flex: 1;
+    border: 1px solid #2a2a2a;
+    padding: 18px;
+    background: #0f0f0f;
     cursor: pointer;
+    transition: background 0.2s, border 0.2s;
 }
 
-button:hover {
-    background: #222;
+.folder:hover {
+    background: #141414;
+    border-color: #3a3a3a;
 }
 
-.log {
-    margin-top: 15px;
+.folder span {
     font-size: 12px;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+}
+
+/* ===== DISABLED ITEMS ===== */
+.folder.disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+.folder.disabled:hover {
+    background: #0f0f0f;
+    border-color: #2a2a2a;
+}
+
+/* ===== LOG INDEX PAGE ===== */
+.log-index {
+    border: 1px solid #1f1f1f;
+    padding: 25px;
+    background: linear-gradient(#0c0c0c, #090909);
+}
+
+.log-list {
+    margin-top: 20px;
+}
+
+.log-entry-link {
+    border-bottom: 1px solid #222;
+    padding: 10px 0;
+    cursor: pointer;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.log-entry-link:hover {
+    background: #111;
+}
+
+/* ===== INDIVIDUAL LOG RECORD ===== */
+.database-panel {
+    max-width: 900px;
+    margin: 40px auto;
+    border: 1px solid #2a2a2a;
+    padding: 25px;
+    background: linear-gradient(#0c0c0c, #090909);
+}
+
+.db-header {
+    margin-bottom: 15px;
+}
+
+.db-header h1 {
+    font-size: 15px;
+    letter-spacing: 3px;
+}
+
+.db-header p {
+    font-size: 11px;
+    opacity: 0.6;
+}
+
+.db-meta {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #222;
+    padding: 10px 0;
+    margin: 20px 0;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.db-content {
+    font-size: 13px;
+    line-height: 1.7;
+    white-space: pre-line;
+}
+
+.db-footer {
+    margin-top: 30px;
+    font-size: 11px;
+    opacity: 0.5;
+    letter-spacing: 2px;
+}
+
+/* ===== SYSTEM TEXT ===== */
+.system-warning {
+    color: #cfcfcf;
+    opacity: 0.6;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+/* ===== LINKS ===== */
+a {
+    color: inherit;
+    text-decoration: none;
 }
