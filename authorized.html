@@ -9,7 +9,10 @@
 
 <div class="system">
     <h1>VANTAGE INTERNAL DATABASE</h1>
-    <p class="subtitle">Clearance Level: EMPLOYEE</p>
+    <p class="subtitle">
+        ACTIVE SESSION — MONITORING ENABLED<br>
+        ENTITY STATUS: UNRESOLVED
+    </p>
 
     <div class="files">
         <div class="file">📁 INCIDENT_LOGS</div>
@@ -19,6 +22,12 @@
         <div class="file redacted">📄 [REDACTED]</div>
     </div>
 </div>
+
+<script>
+if (sessionStorage.getItem("vantage_access") !== "granted") {
+    document.body.innerHTML = "ACCESS TERMINATED";
+}
+</script>
 
 </body>
 </html>
