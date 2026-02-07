@@ -1,53 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>VANTAGE SECURE TERMINAL</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>VANTAGE ACCESS</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="terminal">
+<div class="login-container">
+    <h1>VANTAGE INTERNAL ACCESS</h1>
 
-    <h1>VANTAGE</h1>
-    <p class="subtitle">INTERNAL ACCESS NODE</p>
+    <input id="identification" type="text" placeholder="Identification">
+    <input id="accessKey" type="password" placeholder="Access Key">
 
-    <p>
-      This system is not designated for public access.<br>
-      All sessions are logged and preserved.
-    </p>
+    <button onclick="login()">SUBMIT</button>
 
-    <p>
-      Identification is required to proceed.<br>
-      Absence of authorization does not prevent continuation.
-    </p>
+    <p id="log" class="log"></p>
+</div>
 
-    <form id="loginForm">
-      <input 
-        type="text" 
-        id="username" 
-        placeholder="IDENTIFICATION" 
-        autocomplete="off" 
-        required
-      >
-
-      <input 
-        type="password" 
-        id="password" 
-        placeholder="ACCESS KEY" 
-        autocomplete="off" 
-        required
-      >
-
-      <button type="submit">AUTHORIZE</button>
-    </form>
-
-    <p id="error">
-      ENTRY LOGGED
-    </p>
-
-  </div>
-
-  <script src="login.js"></script>
+<script src="login.js"></script>
 </body>
 </html>
