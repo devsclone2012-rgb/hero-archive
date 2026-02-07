@@ -24,8 +24,8 @@
 </div>
 
 <script>
-if (sessionStorage.getItem("vantage_access") !== "granted") {
-    document.body.innerHTML = "ACCESS TERMINATED";
+if (localStorage.getItem("vantage_access") !== "granted") {
+    document.body.innerHTML = "<h1 style='font-family:monospace;color:#ff4a4a'>ACCESS TERMINATED</h1>";
 }
 </script>
 
