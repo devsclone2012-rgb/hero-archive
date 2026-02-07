@@ -1,32 +1,30 @@
 const form = document.getElementById("loginForm");
 const error = document.getElementById("error");
 
-form.addEventListener("submit", function(e) {
+form.addEventListener("submit", function (e) {
   e.preventDefault();
 
-  const id = document.getElementById("username").value.trim();
-  const key = document.getElementById("password").value.trim();
+  const identification = document
+    .getElementById("username")
+    .value
+    .trim();
 
-  // SINGLE EMPLOYEE IDENTIFICATION
+  const accessKey = document
+    .getElementById("password")
+    .value
+    .trim();
+
   const EMPLOYEE_ID = "VantageEmployee";
-
-  // ACCESS KEY
   const ACCESS_KEY = "Ydqwdjhkhursurmhfw";
 
-  if (id === EMPLOYEE_ID && key === ACCESS_KEY) {
-    error.style.display = "block";
+  if (identification === EMPLOYEE_ID && accessKey === ACCESS_KEY) {
     error.innerText = "ACCESS ACKNOWLEDGED";
-
     setTimeout(() => {
       window.location.href = "authorized.html";
     }, 1200);
-
-  } else if (id === EMPLOYEE_ID) {
-    error.style.display = "block";
-    error.innerText = "DESIGNATION CONFIRMED. KEY FORMAT UNRECOGNIZED.";
-
+  } else if (identification === EMPLOYEE_ID) {
+    error.innerText = "DESIGNATION CONFIRMED. KEY UNRECOGNIZED.";
   } else {
-    error.style.display = "block";
     error.innerText = "ENTRY LOGGED.";
   }
 });
