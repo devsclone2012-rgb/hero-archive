@@ -7,6 +7,8 @@ function login() {
         log.style.color = "#6aff6a";
         log.textContent = "ACCESS APPROVED — ENTRY LOGGED";
 
+        sessionStorage.setItem("vantage_access", "granted");
+
         setTimeout(() => {
             window.location.href = "approved.html";
         }, 1200);
