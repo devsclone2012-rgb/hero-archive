@@ -1,30 +1,17 @@
-const form = document.getElementById("loginForm");
-const error = document.getElementById("error");
+function login() {
+    const id = document.getElementById("identification").value;
+    const key = document.getElementById("accessKey").value;
+    const log = document.getElementById("log");
 
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
+    if (id === "VantageEmployee" && key === "Ydqwdjhkhursurmhfw") {
+        log.style.color = "#6aff6a";
+        log.textContent = "ACCESS APPROVED — ENTRY LOGGED";
 
-  const identification = document
-    .getElementById("username")
-    .value
-    .trim();
-
-  const accessKey = document
-    .getElementById("password")
-    .value
-    .trim();
-
-  const EMPLOYEE_ID = "VantageEmployee";
-  const ACCESS_KEY = "Ydqwdjhkhursurmhfw";
-
-  if (identification === EMPLOYEE_ID && accessKey === ACCESS_KEY) {
-    error.innerText = "ACCESS ACKNOWLEDGED";
-    setTimeout(() => {
-      window.location.href = "authorized.html";
-    }, 1200);
-  } else if (identification === EMPLOYEE_ID) {
-    error.innerText = "DESIGNATION CONFIRMED. KEY UNRECOGNIZED.";
-  } else {
-    error.innerText = "ENTRY LOGGED.";
-  }
-});
+        setTimeout(() => {
+            window.location.href = "approved.html";
+        }, 1200);
+    } else {
+        log.style.color = "#ff4a4a";
+        log.textContent = "ACCESS DENIED — ENTRY LOGGED";
+    }
+}
