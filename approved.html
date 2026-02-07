@@ -2,32 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>VANTAGE SYSTEM</title>
-    <link rel="stylesheet" href="approved.css">
+    <title>VANTAGE ARCHIVE</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="system">
-    <h1>VANTAGE INTERNAL DATABASE</h1>
-    <p class="subtitle">
-        ACTIVE SESSION — MONITORING ENABLED<br>
-        ENTITY STATUS: UNRESOLVED
+<div class="archive">
+    <h1>VANTAGE INTERNAL ARCHIVE</h1>
+
+    <p class="description">
+        Archived materials are retained for continuity purposes.<br>
+        Modifications are logged automatically.
     </p>
 
-    <div class="files">
-        <div class="file">📁 INCIDENT_LOGS</div>
-        <div class="file">📁 HERO_PROTOCOL</div>
-        <div class="file">📁 ARCHIVE</div>
-        <div class="file redacted">📄 [REDACTED]</div>
-        <div class="file redacted">📄 [REDACTED]</div>
+    <div class="folder" onclick="location.href='logs/index.html'">
+        INCIDENT_LOGS
+    </div>
+
+    <div class="folder disabled">
+        SYSTEM_BACKUPS
+    </div>
+
+    <div class="folder disabled">
+        ACCESS_AUDITS
     </div>
 </div>
-
-<script>
-if (localStorage.getItem("vantage_access") !== "granted") {
-    document.body.innerHTML = "<h1 style='font-family:monospace;color:#ff4a4a'>ACCESS TERMINATED</h1>";
-}
-</script>
 
 </body>
 </html>
