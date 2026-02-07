@@ -4,12 +4,31 @@ const error = document.getElementById("error");
 form.addEventListener("submit", function(e) {
   e.preventDefault();
 
-  const user = document.getElementById("username").value;
-  const pass = document.getElementById("password").value;
+  const id = document.getElementById("username").value.trim().toUpperCase();
+  const key = document.getElementById("password").value.trim();
 
-  if (user === "VANTAGE" && pass === "1973") {
-    window.location.href = "authorized.html";
+  // SINGLE EMPLOYEE IDENTIFICATION
+  const EMPLOYEE_ID = "VantageEmployee";
+
+  // H.E.R.O ACCESS KEYS (FORMAT-BASED)
+  const HERO_KEYS = [
+    "Ydqwdjhkhursurmhfw"
+  ];
+
+  if (id === EMPLOYEE_ID && HERO_KEYS.includes(key)) {
+    error.style.display = "block";
+    error.innerText = "ACCESS ACKNOWLEDGED";
+
+    setTimeout(() => {
+      window.location.href = "authorized.html";
+    }, 1200);
+
+  } else if (id === EMPLOYEE_ID) {
+    error.style.display = "block";
+    error.innerText = "DESIGNATION CONFIRMED. KEY FORMAT UNRECOGNIZED.";
+
   } else {
     error.style.display = "block";
+    error.innerText = "ENTRY LOGGED.";
   }
 });
