@@ -1,10 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>H.E.R.O. Archive</title>
+  <meta charset="UTF-8">
+  <title>VANTAGE SECURE TERMINAL</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>H.E.R.O. ARCHIVAL NODE</h1>
-  <p>Status: ACTIVE</p>
+
+  <div class="terminal">
+
+    <h1>VANTAGE</h1>
+    <p class="subtitle">INTERNAL ACCESS NODE</p>
+
+    <p>
+      This system is not designated for public access.<br>
+      All sessions are logged and preserved.
+    </p>
+
+    <p>
+      Identification is required to proceed.<br>
+      Absence of authorization does not prevent continuation.
+    </p>
+
+    <form id="loginForm">
+      <input 
+        type="text" 
+        id="username" 
+        placeholder="IDENTIFICATION" 
+        autocomplete="off" 
+        required
+      >
+
+      <input 
+        type="password" 
+        id="password" 
+        placeholder="ACCESS KEY" 
+        autocomplete="off" 
+        required
+      >
+
+      <button type="submit">AUTHORIZE</button>
+    </form>
+
+    <p id="error">
+      ENTRY LOGGED
+    </p>
+
+  </div>
+
+  <script src="login.js"></script>
 </body>
 </html>
