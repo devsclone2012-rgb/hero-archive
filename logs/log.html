@@ -1,32 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>INCIDENT RECORD</title>
-    <link rel="stylesheet" href="../style.css">
+  <meta charset="UTF-8">
+  <title>INCIDENT LOG</title>
+  <link rel="stylesheet" href="../style.css">
 </head>
 <body>
 
 <div class="database-panel">
-    <div class="db-header">
-        <h1>INCIDENT RECORD</h1>
-        <p>ACCESS LEVEL: INTERNAL</p>
-    </div>
+  <div class="db-header">
+    <h1 id="log-day"></h1>
+    <p id="log-author"></p>
+  </div>
 
-    <div class="db-meta">
-        <span id="logTitle"></span>
-        <span id="logMeta"></span>
-    </div>
+  <div class="db-content" id="log-text"></div>
 
-    <div class="db-content">
-        <p id="logText"></p>
-    </div>
-
-    <div class="db-footer">
-        <p>MODIFICATIONS ARE MONITORED</p>
-    </div>
+  <div class="db-footer">
+    RECORD STATUS: IMMUTABLE
+  </div>
 </div>
 
 <script src="logs.js"></script>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("id");
+
+  if (logs[id]) {
+    document.getElementById("log-day").textContent = logs[id].day;
+    document.getElementById("log-author").textContent = "AUTHOR: " + logs[id].author;
+    document.getElementById("log-text").textContent = logs[id].text;
+  }
+</script>
+
 </body>
 </html>
