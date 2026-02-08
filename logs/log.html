@@ -7,10 +7,13 @@
 </head>
 <body>
 
+<div style="margin-bottom: 20px; font-size: 12px; opacity: 0.6; cursor: pointer;"
+     onclick="history.back()">← RETURN</div>
+
 <div class="database-panel">
   <div class="db-header">
     <h1 id="log-day"></h1>
-    <p id="log-author"></p>
+    <p id="log-meta"></p>
   </div>
 
   <div class="db-content" id="log-text"></div>
@@ -27,7 +30,8 @@
 
   if (logs[id]) {
     document.getElementById("log-day").textContent = logs[id].day;
-    document.getElementById("log-author").textContent = "AUTHOR: " + logs[id].author;
+    document.getElementById("log-meta").textContent =
+      "Timestamp: " + logs[id].timestamp + " | Employee: " + logs[id].employee;
     document.getElementById("log-text").textContent = logs[id].text;
   }
 </script>
